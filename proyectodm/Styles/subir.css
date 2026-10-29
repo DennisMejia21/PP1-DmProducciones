@@ -1,0 +1,143 @@
+/* =========================
+   🔹 RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   🔹 BODY
+========================= */
+body {
+    background: linear-gradient(135deg, #181818, #202020);
+    color: #fff; /* Texto blanco puro */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    transition: background 0.5s;
+}
+
+/* =========================
+   🔹 CONTENEDOR
+========================= */
+.container {
+    background: #1e1e1e;
+    padding: 40px 35px;
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+/* =========================
+   🔹 TITULO
+========================= */
+.container h1 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 34px;
+    color: #f5f5f5; /* Blanco ligeramente cálido */
+    letter-spacing: 1px;
+}
+
+/* =========================
+   🔹 FORM
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* INPUTS & TEXTAREA */
+input[type="text"],
+textarea {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #111;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border: 1px solid #bbb; /* borde más claro */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* FILE INPUT ESTILIZADO */
+.file-input {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.file-input input[type="file"] {
+    margin-top: 8px;
+    padding: 8px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.file-input input[type="file"]:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+/* BOTON SUBMIT */
+button[type="submit"] {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #e0e0e0, #bdbdbd); /* gris claro */
+    color: #222; /* texto oscuro */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #f5f5f5, #dcdcdc);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   🔹 RESPONSIVE
+========================= */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 25px;
+    }
+    .container {
+        padding: 25px 20px;
+    }
+    .container h1 {
+        font-size: 26px;
+    }
+    button[type="submit"] {
+        font-size: 15px;
+        padding: 12px;
+    }
+}

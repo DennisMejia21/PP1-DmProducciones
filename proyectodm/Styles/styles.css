@@ -1,0 +1,623 @@
+/* =======================
+   🔹 RESET GENERAL
+======================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* =======================
+   🔹 HEADER & NAVBAR
+======================= */
+.header {
+  height: 100vh;
+  margin-bottom: 10px;
+}
+
+.navbar {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  transition: background 0.3s ease;
+  padding: 0 20px;
+}
+
+/* Navbar al hacer scroll */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar__logo img {
+  width: 100px;
+  max-width: 80px;
+}
+
+.navbar__menu {
+  display: flex;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  justify-content: space-around;
+  width: 75%;
+}
+
+.navbar__menu a {
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgb(196, 147, 73);
+  transition: 0.3s;
+}
+
+.navbar__menu a:hover {
+  color: white;
+  border-bottom: 1px solid rgb(211, 152, 65);
+}
+
+.navbar__item {
+  margin: 0 10px;
+  padding: 35px 0;
+  text-transform: uppercase;
+}
+
+/* =======================
+   🔹 ICONOS LOGIN / PORTAFOLIO
+======================= */
+.candado, .subir_porta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.candado img, .subir_porta img {
+  width: 50px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.candado img:hover, .subir_porta img:hover {
+  transform: scale(1.1);
+}
+
+/* =======================
+   🔹 VIDEO DE FONDO Y INFO
+======================= */
+.caja-video {
+  position: relative;
+}
+
+.caja-video video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.caja-video::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.caja-info {
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.caja-info h1 {
+  font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.logo-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.logo-icons img {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s;
+}
+
+.logo-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* =======================
+   🔹 MAIN / SECCIONES
+======================= */
+.main {
+  background-color: #202020;
+  color: white;
+}
+
+/* SOBRE NOSOTROS */
+.parrafo_de_nosotros {
+  background: url('../Image/yo.jpg') center/cover no-repeat;
+  position: relative;
+  color: white;
+  padding: 12% 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Overlay oscuro */
+.parrafo_de_nosotros::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+/* Contenido sobre overlay */
+.parrafo_de_nosotros .titulo,
+.parrafo_nosotros {
+  position: relative;
+  z-index: 1;
+}
+.titulo {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.parrafo_de_nosotros .titulo span {
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.parrafo_nosotros {
+  
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.8;
+  color: #f0f0f0;
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Línea divisoria */
+.Linea {
+  border: 0;
+  height: 2px;
+  background: black;
+  width: 60%;
+  margin: 40px auto;
+  border-radius: 2px;
+}
+
+/* =======================
+   🔹 SERVICIOS / SECCIONES DE EVENTOS
+======================= */
+.titulo_servicios h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  font-size: 30px;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;      /* Espaciado entre letras */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra ligera */
+}
+
+.section_eventos, .header_bautismos {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.img_principal_de_los_servicios img {
+  width: 500px;
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid;
+}
+
+.texto_de_los_servicios_titulos h2 { 
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 35px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+.texto_de_los_servicios_titulos span {
+  font-weight: bold;
+  color:rgb(218, 198, 110)
+}
+
+.texto_de_los_servicios p, .texto_bajo {
+  text-align: center;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 15px;
+  margin-top: 10px;
+  word-spacing: 6px;
+}
+
+.texto_bajo {
+  font-size: 18px;
+  color: lightgrey;
+}
+
+/* GALERÍA */
+.section_de_galeria_de_los_servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+  padding: 10px;
+}
+
+.section_de_galeria_de_los_servicios img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 4px;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.section_de_galeria_de_los_servicios img:hover {
+  transform: scale(1.03);
+}
+
+/* =======================
+   🔹 PORTAFOLIOS / CARD
+======================= */
+.titulo_portafolios h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  font-size: 30px;
+  margin: 40px 0 20px 0;
+}
+.portafolios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #202020; /* Fondo oscuro general */
+}
+
+.card {
+  background: white; /* Gris oscuro */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* sombra más fuerte */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); 
+}
+
+.card h2 { 
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(0, 0, 0); /* Blanco para destacar */
+  margin-bottom: 10px; 
+}
+
+.card p { 
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px; 
+  color: #202020; /* Gris claro para textos */
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  object-fit: cover;
+  height: 180px;
+  filter: brightness(0.85); /* Oscurece un poco la imagen */
+  transition: filter 0.2s;
+}
+
+.card-img:hover {
+  filter: brightness(1); /* Aclarar al pasar el mouse */
+}
+
+/* =======================
+   🔹 LIGHTBOX
+======================= */
+.lightbox {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.lightbox .close, 
+.lightbox .prev, 
+.lightbox .next {
+  position: absolute;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox .close { top: 20px; right: 30px; }
+.lightbox .prev { left: 30px; top: 50%; transform: translateY(-50%); }
+.lightbox .next { right: 30px; top: 50%; transform: translateY(-50%); }
+
+/* =======================
+   🔹 FOOTER
+======================= */
+footer {
+  background: #111; /* Fondo oscuro */
+  color: #ccc; /* Gris claro para texto */
+  padding: 50px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #fff;
+  border-bottom: 2px solid #555; /* línea debajo del título */
+  padding-bottom: 5px;
+}
+
+.footer-section p, 
+.footer-section a {
+  font-size: 14px;
+  color: #bbb; /* un gris más suave para texto */
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #00b894; /* resalta al pasar el mouse */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #888;
+  border-top: 1px solid #333; /* línea superior */
+  padding-top: 15px;
+}
+/* =======================
+   🔹 HAMBURGER MENU
+======================= */
+.navbar__toggle {
+  display: none; /* oculto por defecto, solo móvil */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar__toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Menú responsive */
+.navbar__menu {
+  transition: all 0.3s ease;
+}
+
+.navbar__menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.95);
+  padding: 20px 0;
+  z-index: 99;
+}
+
+.navbar__menu.active .navbar__item {
+  margin: 10px 0;
+  padding: 10px 0;
+  text-align: center;
+}
+/* =======================
+   🔹 ICONOS SOCIALES EN FOOTER
+======================= */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  filter: grayscale(20%); /* un gris elegante por defecto */
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  filter: grayscale(0%); /* color original al hover */
+}
+/* =======================
+   🔹 BOTÓN FLOTANTE DE WHATSAPP
+======================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+/* Hasta 768px */
+@media screen and (max-width: 768px) {
+  .navbar__menu {
+    display: none; /* ocultamos el menú principal */
+    width: 100%;
+  }
+  .navbar__toggle {
+    display: flex; /* mostramos hamburger */
+  }
+
+  .caja-info h1 {
+    font-size: 36px;
+  }
+
+  .logo-icons img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .section_eventos, .header_bautismos {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .img_principal_de_los_servicios img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section_de_galeria_de_los_servicios {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .portafolios {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Hasta 480px */
+@media screen and (max-width: 480px) {
+  .navbar__menu.active {
+    top: 80px;
+  }
+  .caja-info h1 {
+    font-size: 28px;
+  }
+  .logo-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  .parrafo_de_nosotros {
+    padding: 20% 10px;
+  }
+  .parrafo_de_nosotros .titulo {
+    font-size: 20px;
+  }
+  .parrafo_nosotros {
+    font-size: 14px;
+  }
+  .section_de_galeria_de_los_servicios {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .portafolios {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .footer-section {
+    min-width: 100%;
+  }
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+}

@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!docker/
+!docker/php.ini
+!docker/healthcheck.php
+!proyectodm/
+!proyectodm/**
+**/.git
+**/.env
+**/.env.*
+**/node_modules
+proyectodm/*.sql

@@ -1,0 +1,10 @@
+# Solo para compilar en la nube de Codex con su CA de proxy.
+services:
+  web:
+    build:
+      secrets:
+        - proxy_ca
+
+secrets:
+  proxy_ca:
+    file: /etc/ssl/certs/ca-certificates.crt

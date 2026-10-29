@@ -1,0 +1,46 @@
+name: dmproducciones
+
+services:
+  web:
+    build:
+      context: .
+    image: dmproducciones-web:local
+    ports:
+      - "127.0.0.1:${DM_PORT:-8080}:80"
+    volumes:
+      - db_socket:/var/run/mysqld:ro
+      - uploads:/var/www/html/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "php", "/usr/local/bin/dm-healthcheck.php"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  db:
+    build:
+      context: .
+      dockerfile: docker/db.Dockerfile
+    image: dmproducciones-db:local
+    environment:
+      MARIADB_DATABASE: proyectodm2
+      # Reproduce la conexión local de XAMPP del proyecto original.
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "yes"
+      MARIADB_ROOT_HOST: localhost
+    volumes:
+      - db_data:/var/lib/mysql
+      - db_socket:/var/run/mysqld
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
+volumes:
+  db_data:
+  db_socket:
+  uploads:

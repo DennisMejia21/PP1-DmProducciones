@@ -1,0 +1,6 @@
+*
+!docker/
+!docker/db.Dockerfile
+!docker/db.Dockerfile.dockerignore
+!proyectodm/
+!proyectodm/dmproducciones.sql
